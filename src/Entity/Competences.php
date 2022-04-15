@@ -25,6 +25,12 @@ class Competences
     #[ORM\ManyToOne(targetEntity: Categorie::class, inversedBy: 'competences')]
     private $categorie;
 
+    #[ORM\Column(type: 'date', nullable: true)]
+    private $periode;
+
+    #[ORM\Column(type: 'date', nullable: true)]
+    private $periodeFin;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +80,30 @@ class Competences
     public function setCategorie(?Categorie $categorie): self
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getPeriode(): ?\DateTimeInterface
+    {
+        return $this->periode;
+    }
+
+    public function setPeriode(?\DateTimeInterface $periode): self
+    {
+        $this->periode = $periode;
+
+        return $this;
+    }
+
+    public function getPeriodeFin(): ?\DateTimeInterface
+    {
+        return $this->periodeFin;
+    }
+
+    public function setPeriodeFin(?\DateTimeInterface $periodeFin): self
+    {
+        $this->periodeFin = $periodeFin;
 
         return $this;
     }

@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Categorie;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -20,18 +21,19 @@ class AppFixtures extends Fixture
     {
         // $product = new Product();
         // $manager->persist($product);
-        $user = new User();
+        /*$user = new User();
             $user-> setNom('Delahaye');
             $user->setPrenom('Anton');
             $user->setEmail('anto.delahaye@gmail.com');
             $user->setUsername('Avrelle');
             $user->setAge('21');
             $password = $this->hasher->hashPassword($user, 'Taxjad55');
-            $user->setPassword($password);
+            $user->setPassword($password);*/
 
 
-
-        $manager->persist($user);
+        $categorie = new Categorie;
+            $categorie -> setTitre('Gérer le patrimoine informatique');
+        $manager->persist($categorie);
 
 
         $manager->flush();

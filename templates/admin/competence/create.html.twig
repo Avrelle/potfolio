@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<div class ="container mt-4">
+    {{ form_start(form)}}
+        <h1> Creation compétences</h1>
+    <div class="row mt-4">
+        <div class="col md-6">
+            {{ form_row(form.titre) }}
+        </div>
+         <div class="col md-6">
+            {{ form_row(form.realisation) }}
+        </div>
+            <div class="col md-6">
+            {{ form_row(form.periode) }}
+        </div>
+          <div class="col md-6">
+            {{ form_row(form.periodeFin) }}
+        </div>
+         <div class="col md-6">
+            {{ form_row(form.valide) }}
+        </div>
+         <div class="col md-6">
+            {{ form_row(form.categorie) }}
+        </div>
+          <div class="col md-6">
+            {{ form_row(form.save) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+        
+
+</div>
+{% endblock %}
