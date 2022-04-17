@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+ <h1>Se connecter</h1>
+ {% if error %}
+     {{ error.messageKey | trans(error.messageData, 'security') }}
+ {% endif %}
+    <form method="POST" action="{{ path('login') }}">
+        <label for="email"> email </label>
+            <input type ="email" id="username" name="_username" placeholder="toto@test.fr">
+        <label for="password"> mot de passe </label>
+            <input type="password" id="password" name="_password">
+        <button> Se connecter</button>
+
+    
+
+
+    </form>
+    
+{% endblock %}

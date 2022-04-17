@@ -72,7 +72,7 @@ class AdminController extends AbstractController
             $this->em->persist($competence);
             $this->em->flush();
 
-            return $this->redirectToRoute('admin');
+            return $this->redirectToRoute('admin.competence.liste');
         }
         
         return $this->render("admin/competence/create.html.twig",
@@ -115,9 +115,8 @@ class AdminController extends AbstractController
      * @return Response
      */
 
-    public function deleteCompetence($id, Request $request, Competences $competence): Response
+    public function deleteCompetence(Request $request, Competences $competence, int $id): Response
     {
-
         if ($this->isCsrfTokenValid('delete' . $competence->getId(), $request->get('_token')))
         {   
             $this->em->remove($competence);
@@ -162,7 +161,7 @@ class AdminController extends AbstractController
             $this->em->persist($categorie);
             $this->em->flush();
 
-            return $this->redirectToRoute('admin');
+            return $this->redirectToRoute('admin.categorie.show');
         }
         
         return $this->render("admin/categorie/create.html.twig",
@@ -188,7 +187,7 @@ class AdminController extends AbstractController
             $this->em->flush();
             $this->addFlash('success', 'Categorie modifié !');
 
-            return $this->redirectToRoute('admin.categorie.liste');
+            return $this->redirectToRoute('admin.categorie.show');
         }
         
         return $this->render("admin/categorie/create.html.twig",
@@ -200,7 +199,7 @@ class AdminController extends AbstractController
      /**
      * fonction qui supprime categorie
      *
-     * @Route ("/deleteCate/{id}", name="admin.categorie.delete")
+     * @Route ("/deleteCat/{id}", name="admin.categorie.delete")
      * @return Response
      */
 
@@ -216,7 +215,7 @@ class AdminController extends AbstractController
            
         }
         
-        return $this->redirectToRoute('admin.categorie.liste');
+        return $this->redirectToRoute('admin.categorie.show');
     }
 
 }

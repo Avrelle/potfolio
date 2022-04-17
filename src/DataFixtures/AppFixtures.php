@@ -21,21 +21,20 @@ class AppFixtures extends Fixture
     {
         // $product = new Product();
         // $manager->persist($product);
-        /*$user = new User();
+        $user = new User();
             $user-> setNom('Delahaye');
             $user->setPrenom('Anton');
-            $user->setEmail('anto.delahaye@gmail.com');
+            $user->setEmail('anton.delahaye@gmail.com');
             $user->setUsername('Avrelle');
             $user->setAge('21');
+            $user->setRoles(["ROLE_ADMIN"]);
             $password = $this->hasher->hashPassword($user, 'Taxjad55');
-            $user->setPassword($password);*/
+            $user->setPassword($password);
 
 
-        $categorie = new Categorie;
-            $categorie -> setTitre('Gérer le patrimoine informatique');
-        $manager->persist($categorie);
-
-
+        //$categorie = new Categorie;
+        //$categorie -> setTitre('Gérer le patrimoine informatique');
+        $manager->persist($user);
         $manager->flush();
     }
 }
