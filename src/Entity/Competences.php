@@ -84,24 +84,24 @@ class Competences
         return $this;
     }
 
-    public function getPeriode(): ?\DateTimeInterface
+    public function getPeriode(): ?\DateTime
     {
         return $this->periode;
     }
 
-    public function setPeriode(?\DateTimeInterface $periode): self
+    public function setPeriode(?\DateTime $periode): self
     {
         $this->periode = $periode;
 
         return $this;
     }
 
-    public function getPeriodeFin(): ?\DateTimeInterface
+    public function getPeriodeFin(): ?\DateTime
     {
         return $this->periodeFin;
     }
 
-    public function setPeriodeFin(?\DateTimeInterface $periodeFin): self
+    public function setPeriodeFin(?\DateTime $periodeFin): self
     {
         $this->periodeFin = $periodeFin;
 

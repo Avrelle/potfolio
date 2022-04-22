@@ -1,7 +1,9 @@
 {% extends "base.html.twig" %}
 {% block body %}
- <div class="container mt-4">
-    <h1>Affichage compétences</h1>
+<section class="container mt-4">
+    <div class="container mt-4">
+    <div class="comp-affiche">
+       <h1>Affichage compétences</h1>
     <table>
         <thead>
             <th>Id</th>
@@ -18,12 +20,13 @@
                     <td>{{ competence.id }}</td>
                     <td>{{ competence.titre }}</td>
                     <td>{{ competence.realisation }}</td>
-                    <td>{{ competence.periode }}</td>
-                    <td>{{ competence.periodeFin }}</td>
+                    <td>{{ "now"|date("m/d/Y") }}</td>
+                    <td>{{ "now"|date("m/d/Y") }}</td>
                     <td>{{ competence.valide }}</td>
                     <td>{{ competence.categorie.titre }}</td>
+                    </div>
 
-                    <td>
+                    
 
                     <td>
                         <a href="{{ path('admin.competence.edit', {'id': competence.id} ) }}" class="btn btn-primary btn-inline mt-2">Modifier</a>
@@ -37,5 +40,6 @@
             {% endfor %}
         </tbody>
     </table>
-</div>
+    </div>
+</section>
 {% endblock %}

@@ -1,5 +1,19 @@
 @import "~bootstrap/scss/bootstrap";
 
-body {
-    background-color: lightgray;
+@import"./header.scss";
+
+@import"./footer.scss";
+
+@import"./homepage.scss";
+
+@import"./apdm.scss";
+
+@import"./bts.scss";
+
+@import"./createCompForm.scss";
+
+@import "./competence.scss";
+body{
+    background-color: rgb(44, 44, 44);
+    overflow-y: scroll;
 }

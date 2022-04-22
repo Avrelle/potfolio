@@ -16,8 +16,37 @@ class FrontController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('front/index.html.twig', [
-            'controller_name' => 'FrontController',
-        ]);
+        return $this->render('front/index.html.twig');
+    }
+    /**
+     * à propos de moi page
+     * 
+     * @Route("/apdm", name="apdm_page")
+     * @return Response
+     */
+    public function apdm(): Response
+    {
+        return $this->render('front/apdm.html.twig');
+
+    }
+    /**
+     * présentation du bts
+     * 
+     *  @Route("/bts", name="bts_page")
+     * @return Response
+     */
+    public function bts(): Response
+    {
+        return $this->render('front/bts.html.twig');
+    }
+    /**
+     * contact
+     * 
+     *  @Route("/contact", name="contact_page")
+     * @return Response
+     */
+    public function contact(): Response
+    {
+        return $this->render('front/contact.html.twig');
     }
 }

@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: var(--police);
+}
+:root{
+    --police:sans-serif ;
+    --primary:rgb(245, 224, 34);
+}
+h2{
+    margin-left: 1em;
+    padding: 8px;
+  
+    
+}
+ul{
+    margin-left: 9em;
+    list-style-type: none;
+    overflow: hidden;
+}
+li{
+    float: left;
+    
+}
+li a{
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 16px;
+    color: rgb(0, 0, 0);
+    
+}
+li a:hover{
+
+    background-color: rgba(0, 0, 0, 0.245);
+    color: rgb(0, 0, 0);
+}
+
+.nav{
+    display: flex;
+    position: static;
+    height: 50px;
+    width: 100%;
+    background-color: var(--primary);
+
+    
+    .navbar{
+        
+        margin-left: 30%;
+        text-align: center;
+        justify-content: center;
+        
+        
+ }
+
+} 
+
