@@ -34,8 +34,10 @@ class AdminController extends AbstractController
      */
     public function index(): Response
     {
+        $competences = $this->repoComp->findAll();
+
         return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
+            'competences' => $competences,
         ]);
     }
 

@@ -1,13 +1,13 @@
-.form {
+.login-content {
     margin-left: 3em;
-    width: 42%;
+    width: 35%;
     margin: 1em auto;
     padding: 1em;
     border-radius: 8px;
     background-color: $gray-300;
 
-    .title {
-        text-align: center;
+    .mpLog {
+        display: flex;
     }
 
     .btn-form {

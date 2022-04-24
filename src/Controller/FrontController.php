@@ -2,12 +2,19 @@
 
 namespace App\Controller;
 
+use App\Repository\CompetencesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class FrontController extends AbstractController
 {
+    public function __construct(CompetencesRepository $repoComp)
+    {
+        $this->repoComp = $repoComp;
+     }
+
+     
     /**
      * Undocumented function
      *
@@ -48,5 +55,19 @@ class FrontController extends AbstractController
     public function contact(): Response
     {
         return $this->render('front/contact.html.twig');
+    }
+     /**
+     * fonction qui affiche le tableau de compétence
+     * 
+     * @Route ("/tableauCompetence", name="tableauComp_page")
+     * @return Response
+     */
+    public function tbCompetence(): Response
+    {
+        $competences = $this->repoComp->findAll();
+
+        return $this->render("front/tableau_comp.html.twig", [
+            'competences' => $competences
+        ]);
     }
 }
