@@ -22,6 +22,10 @@ li{
     float: left;
     
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 li a{
     font-size: 18px;
     text-decoration: none;
@@ -45,7 +49,7 @@ li a:hover{
     
     .navbar{
         
-        margin-left: 30%;
+        margin-left: 20%;
         text-align: center;
         justify-content: center;
         
@@ -53,4 +57,76 @@ li a:hover{
  }
 
 } 
+.navbar-links-mobile{
+    display: none;
+}
+
+@media (max-width: 1024px){
+    .navbar-links-mobile{
+        display: inline-block;
+    }
+    .navbar{
+        display: none;
+    }
+    #burger{
+        width: 30px;
+        height: 3px;
+        background: rgb(0, 0, 0);
+        position: relative;
+        display: inline-block;
+        transition: background 0.3 ease-in;
+    
+    }
+    #burger:before,
+    #burger:after{
+        content:'';
+        width: 30px;
+        height: 3px;
+        background: rgb(0, 0, 0);
+        position: absolute;
+        display: inline-block;
+        transition: all 0.3s ease-in;
+    
+    }
+    #burger::before{
+        top: -7px;
+    }
+    #burger::after{
+        top: 7px;
+    }
+    #burger.open{
+        background: transparent;
+    }
+    #burger.open::before{
+        transform: rotate(45deg);
+        top: 0;
+    }
+    #burger.open::after{
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    .navbar-links-mobile ul {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background: #751e0f;
+        text-align: center;
+        padding: 10px 0;
+        transform: scaleY(0);
+        transform-origin: center top;
+        transition: all 0.3s ease-in;
+        box-shadow: inset 7px 5px 15px -6px #000000 ;
+      }
+    .navbar-links-mobile ul.open{
+        transform: scaleY(1);
+    }
+    .navbar-links-mobile li{
+        padding: 10px 0;
+        border-bottom: solid 1px whitesmoke;
+    }
+    .navbar-links-mobile li:last-child{
+        border-bottom: none;
+    }
+}
 

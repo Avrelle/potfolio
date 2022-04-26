@@ -11,18 +11,15 @@
             <th>periodeDebut</th>
             <th>periodeFin</th>
             <th>categorie</th>
-            <th>valide</th>
         </thead>
         <tbody>
             {% for competence in competences %}
                 <tr>
                     <td>{{ competence.titre }}</td>
                     <td>{{ competence.realisation }}</td>
-                    <td>{{ "now"|date("m/d/Y") }}</td>
-                    <td>{{ "now"|date("m/d/Y") }}</td>
+                    <td>{{ competence.periode|date("m/d/Y") }}</td>
+                    <td>{{ competence.periodeFin|date("m/d/Y") }}</td>
                     <td>{{ competence.categorie.titre }}</td>
-                    <td>{{ competence.valide }}</td>
-                    
                     </div>
 
                 </tr>

@@ -1,10 +1,32 @@
-<nav class="nav" {'attr' : {'class' : 'nav'}}>
+<nav class="nav">
     <h2> DELAHAYE Anton</h2>
     <ul class="navbar">
             <li><a href={{path('home')}}>Accueil</a></li>
             <li><a href={{path('apdm_page')}}>A propos de moi</a></li>
             <li><a href={{path('bts_page')}}>BTS</a></li>
-            <li><a href={{path("tableauComp_page")}}>tableau de compétence</a></li>
-            <li><a href={{path('contact_page')}}>contact</a></li>
+            <li><a href={{path("tableauComp_page")}}>Tableau de compétence</a></li>
+            {% if is_granted("ROLE_ADMIN") %}
+                <li><a href={{path("admin")}}>Admin</a></li>
+                <li><a href={{path("logout")}}>Logout</a></li>
+            {% endif %}
+
+            <li><a href={{path('public_page')}}>public</a></li>
     </ul> 
+
+     <div class="navbar-links-mobile">
+                        <a id="link" href="#">
+                            <span id="burger">
+                            </span>
+                        </a>
+                        <ul>
+
+                            <li><a href={{path('home')}}>Accueil</a></li>
+                            <li><a href={{path('apdm_page')}}>A propos de moi</a></li>
+                            <li><a href={{path('bts_page')}}>BTS</a></li>
+                            <li><a href={{path("tableauComp_page")}}>tableau de compétence</a></li>
+                            <li><a href={{path("admin")}}>admin</a></li>
+                            <li><a href={{path('public_page')}}>public</a></li>
+
+                        </ul>
+                    </div>
 </nav>

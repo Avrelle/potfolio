@@ -49,12 +49,12 @@ class FrontController extends AbstractController
     /**
      * contact
      * 
-     *  @Route("/contact", name="contact_page")
+     *  @Route("/public", name="public_page")
      * @return Response
      */
     public function contact(): Response
     {
-        return $this->render('front/contact.html.twig');
+        return $this->render('front/public.html.twig');
     }
      /**
      * fonction qui affiche le tableau de compétence
